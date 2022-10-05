@@ -7,6 +7,7 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<String> nameList) {
+        //todo 이름길이 검증을 여기로 옮길까?
         cars = nameList.stream()
             .map(Car::new)
             .collect(Collectors.toList());

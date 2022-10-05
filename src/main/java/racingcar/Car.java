@@ -4,13 +4,13 @@ import static racingcar.Message.*;
 
 public class Car {
     private final String name;
-    private int distance;
+    private Distance distance;
 
     public Car(String name) {
         if (name == null || name.length() > 5)
             throw new IllegalArgumentException(CAR_NAME_LENGTH_ERROR);
         this.name = name;
-        distance = 0;
+        distance = new Distance();
     }
 
     public String printName() {
@@ -18,14 +18,14 @@ public class Car {
     }
 
     public void go() {
-        this.distance += 1;
+        this.distance.go();
     }
 
     public int getDistance() {
-        return distance;
+        return distance.get();
     }
 
     public void stop() {
-        //do nothing
+        this.distance.stop();
     }
 }
