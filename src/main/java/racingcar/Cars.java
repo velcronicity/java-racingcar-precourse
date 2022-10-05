@@ -1,13 +1,18 @@
 package racingcar;
 
-import static racingcar.Message.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cars {
-    public GoStop determineGoStop(int randomNumber) {
-        if (randomNumber < 0 || randomNumber > 9)
-            throw new IllegalStateException(RANDOM_NUMBER_ERROR);
-        if (randomNumber >= 4)
-            return GoStop.GO;
-        return GoStop.STOP;
+    private final List<Car> cars;
+
+    public Cars(List<String> nameList) {
+        cars = nameList.stream()
+            .map(Car::new)
+            .collect(Collectors.toList());
+    }
+
+    public int getSize() {
+        return cars.size();
     }
 }
