@@ -13,7 +13,7 @@ public class Input {
         for (String name : names) {
             isValidCarName(name);
         }
-        //todo 중복체크
+        ValidateUtil.isNotDuplicate(names);
         return asList(names);
     }
 

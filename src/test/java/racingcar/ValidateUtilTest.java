@@ -33,4 +33,12 @@ class ValidateUtilTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_COUNT);
     }
+
+    @Test
+    void 중복_자동차이름_검증() {
+        assertDoesNotThrow(() -> ValidateUtil.isNotDuplicate(new String[] {"1", "2", "3"}));
+        assertThatThrownBy(() -> ValidateUtil.isNotDuplicate(new String[] {"1", "1"}))
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage(Message.INPUT_ERROR_CAR_NAME_DUPLICATE);
+    }
 }
