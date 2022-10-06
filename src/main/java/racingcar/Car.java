@@ -8,7 +8,7 @@ public class Car {
 
     public Car(String name) {
         if (name == null || name.length() > 5)
-            throw new IllegalArgumentException(CAR_NAME_LENGTH_ERROR);
+            throw new IllegalArgumentException(INPUT_ERROR_CAR_NAME);
         this.name = name;
         distance = new Distance();
     }

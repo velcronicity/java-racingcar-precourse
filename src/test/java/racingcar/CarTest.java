@@ -26,9 +26,9 @@ public class CarTest {
         assertThat(car.printName()).isEqualTo(name);
         assertThatThrownBy(() -> new Car("123456"))
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage(Message.CAR_NAME_LENGTH_ERROR);
+            .hasMessage(Message.INPUT_ERROR_CAR_NAME);
         assertThatThrownBy(() -> new Car(null))
             .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage(Message.CAR_NAME_LENGTH_ERROR);
+            .hasMessage(Message.INPUT_ERROR_CAR_NAME);
     }
 }

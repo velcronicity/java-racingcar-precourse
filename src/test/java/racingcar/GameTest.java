@@ -15,9 +15,9 @@ public class GameTest {
         assertThat(game.determineGoStop(0)).isEqualTo(GoStop.STOP);
         assertThatThrownBy(() -> game.determineGoStop(-1))
             .isInstanceOf(IllegalStateException.class)
-            .hasMessage(RANDOM_NUMBER_ERROR);
+            .hasMessage(INTERNAL_ERROR_RANDOM_NUMBER);
         assertThatThrownBy(() -> game.determineGoStop(10))
             .isInstanceOf(IllegalStateException.class)
-            .hasMessage(RANDOM_NUMBER_ERROR);
+            .hasMessage(INTERNAL_ERROR_RANDOM_NUMBER);
     }
 }
