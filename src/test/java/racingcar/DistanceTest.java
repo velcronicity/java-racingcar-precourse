@@ -17,4 +17,14 @@ class DistanceTest {
         distance.stop();
         assertThat(distance.get()).isEqualTo(3);
     }
+
+    @Test
+    void 거리_출력_테스트() {
+        Distance distance = new Distance();
+        assertThat(distance.print()).isEqualTo("");
+        distance.go();
+        assertThat(distance.print()).isEqualTo("-");
+        distance.go();
+        assertThat(distance.print()).isEqualTo("--");
+    }
 }

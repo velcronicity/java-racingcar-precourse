@@ -28,4 +28,8 @@ public class Car {
     public void stop() {
         this.distance.stop();
     }
+
+    public String printStatus() {
+        return String.format("%s : %s", printName(), distance.print());
+    }
 }

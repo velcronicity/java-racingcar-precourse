@@ -31,4 +31,14 @@ public class CarTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_CAR_NAME);
     }
+
+    @Test
+    void 자동차_상태출력() {
+        Car car = new Car("test");
+        assertThat(car.printStatus()).isEqualTo("test : ");
+        car.go();
+        car.go();
+        car.go();
+        assertThat(car.printStatus()).isEqualTo("test : ---");
+    }
 }

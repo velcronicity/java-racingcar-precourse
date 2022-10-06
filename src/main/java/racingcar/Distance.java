@@ -18,4 +18,12 @@ public class Distance {
     public int get() {
         return distance;
     }
+
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < distance; i++) {
+            sb.append("-");
+        }
+        return sb.toString();
+    }
 }
