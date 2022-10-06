@@ -5,31 +5,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class ValidatorTest {
+class ValidateUtilTest {
     @Test
     void 자동차이름_5자이하_검증() {
-        assertThatThrownBy(() -> Validator.isValidCarName(null))
+        assertThatThrownBy(() -> ValidateUtil.isValidCarName(null))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_CAR_NAME);
-        assertThatThrownBy(() -> Validator.isValidCarName("123456"))
+        assertThatThrownBy(() -> ValidateUtil.isValidCarName("123456"))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_CAR_NAME);
 
-        assertDoesNotThrow(() -> Validator.isValidCarName("12345"));
-        assertDoesNotThrow(() -> Validator.isValidCarName("a"));
+        assertDoesNotThrow(() -> ValidateUtil.isValidCarName("12345"));
+        assertDoesNotThrow(() -> ValidateUtil.isValidCarName("a"));
     }
 
     @Test
     void 시도회수_검증() {
-        assertDoesNotThrow(() -> Validator.isValidCount("3"));
-        assertDoesNotThrow(() -> Validator.isValidCount("12"));
-        assertThatThrownBy(() -> Validator.isValidCount("a"))
+        assertDoesNotThrow(() -> ValidateUtil.isValidCount("3"));
+        assertDoesNotThrow(() -> ValidateUtil.isValidCount("12"));
+        assertThatThrownBy(() -> ValidateUtil.isValidCount("a"))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_COUNT);
-        assertThatThrownBy(() -> Validator.isValidCount("0"))
+        assertThatThrownBy(() -> ValidateUtil.isValidCount("0"))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_COUNT);
-        assertThatThrownBy(() -> Validator.isValidCount(null))
+        assertThatThrownBy(() -> ValidateUtil.isValidCount(null))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(Message.INPUT_ERROR_COUNT);
     }

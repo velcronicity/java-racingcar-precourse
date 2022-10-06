@@ -2,7 +2,7 @@ package racingcar;
 
 import static racingcar.Message.*;
 
-public class Validator {
+public class ValidateUtil {
     public static void isValidCarName(String name) {
         if (name == null || name.length() > 5) {
             throw new IllegalArgumentException(INPUT_ERROR_CAR_NAME);

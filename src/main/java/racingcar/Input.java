@@ -2,7 +2,7 @@ package racingcar;
 
 import static camp.nextstep.edu.missionutils.Console.*;
 import static java.util.Arrays.*;
-import static racingcar.Validator.*;
+import static racingcar.ValidateUtil.*;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ public class Input {
         for (String name : names) {
             isValidCarName(name);
         }
+        //todo 중복체크
         return asList(names);
     }
 

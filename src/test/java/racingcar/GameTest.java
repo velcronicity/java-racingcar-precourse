@@ -3,6 +3,7 @@ package racingcar;
 import static org.assertj.core.api.Assertions.*;
 import static racingcar.Message.*;
 
+import java.util.Arrays;
 import java.util.Collections;
 
 import org.junit.jupiter.api.Test;
@@ -21,5 +22,19 @@ public class GameTest {
         assertThatThrownBy(() -> game.determineGoStop(10))
             .isInstanceOf(IllegalStateException.class)
             .hasMessage(INTERNAL_ERROR_RANDOM_NUMBER);
+    }
+
+    @Test
+    void goStopInputTest() {
+        Game game = new Game(new Cars(Arrays.asList("zozo", "yubi", "zanbi")));
+        GoStopInput goStopInput = game.getGoStopInput();
+        assertThat(goStopInput.size()).isEqualTo(3);
+    }
+
+    @Test
+    void cycleTest() {
+        Game game = new Game(new Cars(Arrays.asList("zozo", "yubi", "zanbi")));
+        FinalWinner process = game.process(3);
+
     }
 }

@@ -10,13 +10,13 @@ public class CarTest {
     void 자동차는_전진_또는_멈춤_한다() {
         Car car = new Car("test");
         car.go();
-        assertThat(car.getDistance()).isEqualTo(1);
+        assertThat(car.getDistance().get()).isEqualTo(1);
         car.stop();
-        assertThat(car.getDistance()).isEqualTo(1);
+        assertThat(car.getDistance().get()).isEqualTo(1);
         car.go();
-        assertThat(car.getDistance()).isEqualTo(2);
+        assertThat(car.getDistance().get()).isEqualTo(2);
         car.stop();
-        assertThat(car.getDistance()).isEqualTo(2);
+        assertThat(car.getDistance().get()).isEqualTo(2);
     }
 
     @Test

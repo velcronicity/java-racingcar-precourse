@@ -21,8 +21,8 @@ public class Car {
         this.distance.go();
     }
 
-    public int getDistance() {
-        return distance.get();
+    public Distance getDistance() {
+        return distance;
     }
 
     public void stop() {
@@ -31,5 +31,30 @@ public class Car {
 
     public String printStatus() {
         return String.format("%s : %s", printName(), distance.print());
+    }
+
+    public int compare(Car car) {
+        return this.distance.compare(car.distance);
+    }
+
+    public boolean same(Car car) {
+        return this.distance.equals(car.distance);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Car car = (Car)o;
+
+        return name != null ? name.equals(car.name) : car.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
     }
 }
