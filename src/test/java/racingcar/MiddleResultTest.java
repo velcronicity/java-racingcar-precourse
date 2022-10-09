@@ -10,11 +10,18 @@ class MiddleResultTest {
 
     @Test
     void 중간_결과_출력() {
-        String result1 = "yubi : -";
-        String result2 = "zozo : ";
-        String result3 = "zanbi : ---";
-        MiddleResult result = new MiddleResult(Arrays.asList(result1, result2, result3));
-        assertThat(result.print()).isEqualTo(result1 + "\n" + result2 + "\n" + result3);
+        Car yubi = new Car("yubi");
+        yubi.go();
 
+        Car zozo = new Car("zozo");
+        zozo.stop();
+
+        Car zanbi = new Car("zanbi");
+        zanbi.go();
+        zanbi.go();
+        zanbi.go();
+
+        MiddleResult result = new MiddleResult(Arrays.asList(yubi, zozo, zanbi));
+        assertThat(result.print()).isEqualTo("yubi : -" + "\n" + "zozo : " + "\n" + "zanbi : ---");
     }
 }

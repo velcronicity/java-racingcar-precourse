@@ -8,9 +8,8 @@ public class Application {
     public static void main(String[] args) {
         List<String> carNames = readCarsName();
         int count = readCount();
-        Cars cars = new Cars(carNames);
-        Game game = new Game(cars);
-        FinalWinner result = game.process(count);
+        Game game = new Game(carNames);
+        FinalWinner result = game.start(count);
         System.out.println(result.print());
     }
 

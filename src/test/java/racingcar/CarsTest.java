@@ -15,26 +15,10 @@ class CarsTest {
     }
 
     @Test
-    void n번째자동차_go_stop_메소드() {
-        Cars cars = new Cars(Arrays.asList("yubi", "zozo", "son", "yeopo"));
-        Distance distance = new Distance();
-        distance.go();
-        assertThat(cars.goStop(0, GoStop.GO)).isEqualTo(distance);
-        assertThat(cars.goStop(1, GoStop.GO)).isEqualTo(distance);
-    }
-
-    @Test
     void finalWinnerTest() {
         Cars cars = new Cars(Arrays.asList("yubi", "zozo", "son", "yeopo"));
-        cars.goStop(0, GoStop.GO);
+        cars.process(new GoStopParams(5));
         FinalWinner finalWinner = cars.getFinalWinner();
-        assertThat(finalWinner.print()).isEqualTo(FINAL_WINNER_MESSAGE + "yubi");
-
-        cars = new Cars(Arrays.asList("yubi", "zozo", "son", "yeopo"));
-        cars.goStop(0, GoStop.GO);
-        cars.goStop(3, GoStop.GO);
-        finalWinner = cars.getFinalWinner();
-        assertThat(finalWinner.print()).isEqualTo(FINAL_WINNER_MESSAGE + "yeopo, yubi");
-
+        assertThat(finalWinner.print()).contains(FINAL_WINNER_MESSAGE);
     }
 }
