@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 public class Distance {
     private int distance;
@@ -17,14 +17,6 @@ public class Distance {
 
     public int get() {
         return distance;
-    }
-
-    public String print() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < distance; i++) {
-            sb.append("-");
-        }
-        return sb.toString();
     }
 
     public int compare(Distance distance) {

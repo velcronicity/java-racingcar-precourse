@@ -1,4 +1,6 @@
-package racingcar;
+package racingcar.domain;
+
+import racingcar.rule.GoStop;
 
 public class Car {
     private final Name name;
@@ -23,10 +25,6 @@ public class Car {
 
     public void stop() {
         this.distance.stop();
-    }
-
-    public String printStatus() {
-        return String.format("%s : %s", name.printName(), distance.print());
     }
 
     public int compare(Car car) {

@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -19,12 +19,18 @@ class DistanceTest {
     }
 
     @Test
-    void 거리_출력_테스트() {
-        Distance distance = new Distance();
-        assertThat(distance.print()).isEqualTo("");
-        distance.go();
-        assertThat(distance.print()).isEqualTo("-");
-        distance.go();
-        assertThat(distance.print()).isEqualTo("--");
+    void distance_비교_테스트() {
+        Distance distance1 = new Distance();
+        Distance distance2 = new Distance();
+
+        distance1.go();
+        assertThat(distance1.compare(distance2)).isEqualTo(1);
+
+        distance2.go();
+        assertThat(distance1.compare(distance2)).isEqualTo(0);
+
+        distance2.go();
+        assertThat(distance1.compare(distance2)).isEqualTo(-1);
+
     }
 }
