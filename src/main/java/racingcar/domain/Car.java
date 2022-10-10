@@ -19,11 +19,11 @@ public class Car {
         return distance;
     }
 
-    public void go() {
+    private void go() {
         this.distance.go();
     }
 
-    public void stop() {
+    private void stop() {
         this.distance.stop();
     }
 
@@ -34,6 +34,8 @@ public class Car {
     public void goOrStop(GoStop goStop) {
         if (GoStop.GO == goStop) {
             this.go();
+            return;
         }
+        this.stop();
     }
 }

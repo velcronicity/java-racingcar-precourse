@@ -2,7 +2,9 @@ package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import racingcar.rule.GoStopRule;
 
@@ -20,7 +22,9 @@ public class Cars {
     }
 
     private void isNotDuplicate(String[] names) {
-        if (Arrays.stream(names).distinct().count() != names.length) {
+        Set<String> set = new HashSet<>(Arrays.asList(names));
+
+        if (set.size() != names.length) {
             throw new IllegalArgumentException(INPUT_ERROR_CAR_NAME_DUPLICATE);
         }
     }

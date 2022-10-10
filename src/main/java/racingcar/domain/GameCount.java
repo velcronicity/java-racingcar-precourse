@@ -2,7 +2,6 @@ package racingcar.domain;
 
 public class GameCount {
     public static final String INPUT_ERROR_COUNT = "시도할 횟수는 1이상의 숫자만 가능합니다.";
-
     public static final int END_CONDITION = 0;
 
     private int count;

@@ -1,10 +1,11 @@
 package racingcar.domain;
 
 public class Distance {
+    public static final int INITIAL_DISTANCE = 0;
     private int distance;
 
     public Distance() {
-        this.distance = 0;
+        this.distance = INITIAL_DISTANCE;
     }
 
     public void go() {
